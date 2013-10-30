@@ -8,8 +8,8 @@ Marionette.View = Backbone.View.extend({
     _.bindAll(this, "render");
 
     var args = Array.prototype.slice.apply(arguments);
-    Backbone.View.prototype.constructor.apply(this, args);
     this.options = options || {};
+    Backbone.View.prototype.constructor.apply(this, args);
 
     Marionette.MonitorDOMRefresh(this);
     this.listenTo(this, "show", this.onShowCalled, this);
